@@ -2,568 +2,57 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>Emiliano Prieto — Full Stack Developer</title>
 <meta name="description" content="Desarrollador Full Stack especializado en React, Node.js y aplicaciones SaaS. Mendoza, Argentina. Ciudadano español.">
+<meta name="keywords" content="Full Stack, React, Node.js, MySQL, SaaS, Developer, Mendoza, Argentina">
+<meta name="author" content="Emiliano Prieto">
 <meta property="og:title" content="Emiliano Prieto — Full Stack Developer">
 <meta property="og:description" content="Full Stack Developer · React · Node.js · SaaS · Mendoza, Argentina">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0a0f">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #0a0a0f;
-    --bg2: #111118;
-    --bg3: #18181f;
-    --accent: #4f7cff;
-    --accent2: #7c4fff;
-    --gold: #e8c87a;
-    --text: #f0f0f5;
-    --muted: #8888a0;
-    --border: rgba(255,255,255,0.08);
-    --card: rgba(255,255,255,0.04);
-    --font-head: 'Syne', sans-serif;
-    --font-body: 'DM Sans', sans-serif;
-    --radius: 16px;
-    --radius-sm: 8px;
-  }
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* --- NOISE TEXTURE OVERLAY --- */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-    opacity: 0.025;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  /* --- GLOW ORBS --- */
-  .orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.12;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .orb-1 { width: 600px; height: 600px; background: var(--accent); top: -200px; left: -200px; }
-  .orb-2 { width: 400px; height: 400px; background: var(--accent2); bottom: 100px; right: -100px; }
-
-  /* --- NAV --- */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 1.2rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(10,10,15,0.75);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-logo {
-    font-family: var(--font-head);
-    font-weight: 800;
-    font-size: 18px;
-    letter-spacing: -0.03em;
-    color: var(--text);
-    text-decoration: none;
-  }
-  .nav-logo span { color: var(--accent); }
-
-  .nav-links { display: flex; align-items: center; gap: 2rem; }
-  .nav-links a {
-    font-size: 14px;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--text); }
-
-  .lang-toggle {
-    display: flex;
-    gap: 4px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 3px;
-  }
-  .lang-toggle button {
-    background: none;
-    border: none;
-    color: var(--muted);
-    font-size: 12px;
-    font-family: var(--font-body);
-    padding: 4px 10px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .lang-toggle button.active {
-    background: var(--accent);
-    color: #fff;
-  }
-
-  /* --- MAIN LAYOUT --- */
-  main { position: relative; z-index: 1; }
-
-  section { padding: 5rem 0; }
-
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-
-  /* --- HERO --- */
-  #hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 80px;
-  }
-
-  .hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid rgba(79,124,255,0.3);
-    padding: 5px 14px;
-    border-radius: 20px;
-    margin-bottom: 1.5rem;
-  }
-  .hero-tag::before {
-    content: '';
-    width: 6px; height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  h1 {
-    font-family: var(--font-head);
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    font-weight: 800;
-    line-height: 1.0;
-    letter-spacing: -0.04em;
-    margin-bottom: 1.5rem;
-  }
-
-  h1 .line2 { color: var(--accent); }
-
-  .hero-sub {
-    font-size: 17px;
-    color: var(--muted);
-    font-weight: 300;
-    margin-bottom: 2.5rem;
-    line-height: 1.7;
-    max-width: 440px;
-  }
-
-  .hero-cta {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    border-radius: var(--radius-sm);
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-  .btn-primary {
-    background: var(--accent);
-    color: #fff;
-    border: none;
-  }
-  .btn-primary:hover { background: #3d6aff; transform: translateY(-1px); }
-  .btn-ghost {
-    background: var(--card);
-    color: var(--text);
-    border: 1px solid var(--border);
-  }
-  .btn-ghost:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-1px); }
-
-  /* --- HERO VISUAL (right side) --- */
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .avatar-ring {
-    position: relative;
-    width: 320px;
-    height: 320px;
-  }
-  .avatar-ring::before {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    border-radius: 50%;
-    background: conic-gradient(var(--accent), var(--accent2), var(--accent));
-    animation: spin 8s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .avatar-ring::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: var(--bg);
-  }
-  .avatar-inner {
-    position: absolute;
-    inset: 4px;
-    border-radius: 50%;
-    background: var(--bg3);
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .avatar-initials {
-    font-family: var(--font-head);
-    font-size: 80px;
-    font-weight: 800;
-    color: var(--accent);
-    letter-spacing: -0.05em;
-    line-height: 1;
-  }
-
-  .hero-badges {
-    position: absolute;
-    z-index: 2;
-  }
-  .badge-float {
-    position: absolute;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 8px 14px;
-    font-size: 12px;
-    white-space: nowrap;
-    backdrop-filter: blur(10px);
-  }
-  .badge-float.top-right { top: 20px; right: -20px; }
-  .badge-float.bottom-left { bottom: 30px; left: -30px; }
-  .badge-float.mid-left { top: 50%; left: -40px; transform: translateY(-50%); }
-
-  .badge-dot {
-    display: inline-block;
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    margin-right: 6px;
-    vertical-align: middle;
-  }
-  .dot-green { background: #4caf87; }
-  .dot-blue { background: var(--accent); }
-  .dot-gold { background: var(--gold); }
-
-  /* --- SECTION HEADERS --- */
-  .sec-header {
-    margin-bottom: 3rem;
-  }
-  .sec-eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-  }
-  h2 {
-    font-family: var(--font-head);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-  }
-
-  /* --- ABOUT --- */
-  #about { background: var(--bg2); }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 5rem;
-    align-items: start;
-  }
-  .about-text p {
-    color: var(--muted);
-    margin-bottom: 1.2rem;
-    font-weight: 300;
-  }
-  .about-text p strong { color: var(--text); font-weight: 500; }
-  .about-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .stat-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-  }
-  .stat-num {
-    font-family: var(--font-head);
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 0.3rem;
-  }
-  .stat-label { font-size: 13px; color: var(--muted); }
-  .citizenship-badge {
-    margin-top: 1.5rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(232,200,122,0.1);
-    border: 1px solid rgba(232,200,122,0.3);
-    border-radius: var(--radius-sm);
-    padding: 10px 16px;
-    font-size: 13px;
-    color: var(--gold);
-  }
-
-  /* --- PROJECTS --- */
-  #proyectos .proj-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-  }
-
-  .proj-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: border-color 0.3s, transform 0.3s;
-  }
-  .proj-card:hover {
-    border-color: rgba(79,124,255,0.4);
-    transform: translateY(-4px);
-  }
-
-  .proj-mockup {
-    width: 100%;
-    height: 220px;
-    background: var(--bg3);
-    overflow: hidden;
-    position: relative;
-  }
-
-  .proj-body { padding: 1.5rem; }
-  .proj-name {
-    font-family: var(--font-head);
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  .proj-desc {
-    font-size: 14px;
-    color: var(--muted);
-    font-weight: 300;
-    margin-bottom: 1.2rem;
-    line-height: 1.7;
-  }
-  .proj-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag {
-    font-size: 11px;
-    padding: 4px 10px;
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    color: var(--muted);
-  }
-  .tag.accent { border-color: rgba(79,124,255,0.4); color: var(--accent); }
-
-  /* --- SKILLS --- */
-  #skills { background: var(--bg2); }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-  .skill-group {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-  }
-  .skill-group-title {
-    font-family: var(--font-head);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-  }
-  .skill-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: var(--text);
-    margin-bottom: 10px;
-  }
-  .skill-item::before {
-    content: '';
-    width: 5px; height: 5px;
-    background: var(--accent);
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  /* --- CONTACT --- */
-  #contacto .contact-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: start;
-  }
-  .contact-desc { color: var(--muted); font-weight: 300; margin-bottom: 2rem; }
-  .contact-links { display: flex; flex-direction: column; gap: 12px; }
-  .contact-link {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 14px 18px;
-    text-decoration: none;
-    color: var(--text);
-    font-size: 14px;
-    transition: all 0.2s;
-  }
-  .contact-link:hover { border-color: rgba(79,124,255,0.4); transform: translateX(4px); }
-  .contact-link svg { color: var(--accent); flex-shrink: 0; }
-  .contact-link-label { font-size: 11px; color: var(--muted); display: block; }
-  .contact-link-val { font-weight: 500; }
-
-  .avail-card {
-    background: rgba(79,124,255,0.08);
-    border: 1px solid rgba(79,124,255,0.2);
-    border-radius: var(--radius);
-    padding: 2rem;
-  }
-  .avail-title {
-    font-family: var(--font-head);
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-  }
-  .avail-desc { font-size: 14px; color: var(--muted); margin-bottom: 1.5rem; font-weight: 300; }
-  .avail-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  /* --- FOOTER --- */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 2rem;
-    text-align: center;
-    font-size: 13px;
-    color: var(--muted);
-  }
-  footer a { color: var(--accent); text-decoration: none; }
-
-  /* --- HIDDEN LANG CONTENT --- */
-  [data-en] { display: none; }
-  body.lang-en [data-es] { display: none; }
-  body.lang-en [data-en] { display: unset; }
-
-  /* Keep block-level en visible when active */
-  body.lang-en [data-en].block-item { display: block; }
-
-  /* --- ANIMATIONS --- */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-up.visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  /* --- RESPONSIVE --- */
-  @media (max-width: 768px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-visual { display: none; }
-    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-    #proyectos .proj-grid { grid-template-columns: 1fr; }
-    .skills-grid { grid-template-columns: 1fr 1fr; }
-    #contacto .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
-    .nav-links { display: none; }
-  }
-</style>
+<!-- CSS Files -->
+<link rel="stylesheet" href="index-pc.css" media="screen and (min-width: 769px)">
+<link rel="stylesheet" href="index-cel.css" media="screen and (max-width: 768px)">
 </head>
 <body>
 
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- Custom Cursor (solo visible en PC) -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
 
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#hero">EP<span>.</span></a>
   <div class="nav-links">
-    <a href="#about"><span data-es>Sobre mí</span><span data-en>About</span></a>
-    <a href="#proyectos"><span data-es>Proyectos</span><span data-en>Projects</span></a>
+    <a href="#about" data-es>Sobre mí</a>
+    <a href="#proyectos" data-es>Proyectos</a>
     <a href="#skills">Skills</a>
-    <a href="#contacto"><span data-es>Contacto</span><span data-en>Contact</span></a>
+    <a href="#contacto" data-es>Contacto</a>
   </div>
   <div class="lang-toggle">
     <button class="active" onclick="setLang('es')">ES</button>
     <button onclick="setLang('en')">EN</button>
   </div>
+  <div class="menu-toggle" id="menuToggle">☰</div>
 </nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" data-es>Sobre mí</a>
+  <a href="#proyectos" data-es>Proyectos</a>
+  <a href="#skills">Skills</a>
+  <a href="#contacto" data-es>Contacto</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -571,12 +60,13 @@
     <div class="hero-inner">
       <div class="hero-content fade-up">
         <div class="hero-tag">
+          <span class="pulse-dot"></span>
           <span data-es>Disponible para trabajar</span>
           <span data-en>Available for work</span>
         </div>
         <h1>
           <span class="line1">Emiliano</span><br>
-          <span class="line2">Prieto</span>
+          <span class="line2 gradient-text">Prieto</span>
         </h1>
         <p class="hero-sub">
           <span data-es>Desarrollador Full Stack especializado en aplicaciones web modernas y plataformas SaaS. Construyo productos desde el concepto hasta el despliegue en producción.</span>
@@ -594,13 +84,11 @@
         </div>
       </div>
 
-      <!-- AVATAR VISUAL -->
       <div class="hero-visual fade-up" style="transition-delay:0.2s">
         <div class="avatar-ring">
           <div class="avatar-inner">
             <span class="avatar-initials">EP</span>
           </div>
-          <!-- Floating badges -->
           <div class="badge-float top-right">
             <span class="badge-dot dot-blue"></span>React · Node.js
           </div>
@@ -638,7 +126,7 @@
           My path was 100% hands-on: I learned by building real projects that are live and running today. I'm especially passionate about the <strong>SaaS model</strong> and process automation, where technology can scale businesses efficiently.
         </p>
         <div class="citizenship-badge">
-          🇪🇸 <span data-es>Ciudadanía española — disponible para trabajar en España sin visa</span><span data-en>Spanish citizenship — available to work in Spain without a visa</span>
+          🇪🇸 <span data-es>Ciudadanía española — disponible para trabajar en España</span><span data-en>Spanish citizenship — available to work in Spain</span>
         </div>
       </div>
 
@@ -675,11 +163,9 @@
     </div>
 
     <div class="proj-grid">
-      <!-- PROJECT 1: ECOMMERCE -->
       <div class="proj-card fade-up">
         <div class="proj-mockup">
           <svg width="100%" height="220" viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg">
-            <!-- Browser chrome -->
             <rect width="520" height="220" fill="#111118"/>
             <rect width="520" height="32" fill="#1a1a24"/>
             <circle cx="18" cy="16" r="5" fill="#ff5f57"/>
@@ -687,8 +173,6 @@
             <circle cx="50" cy="16" r="5" fill="#28c840"/>
             <rect x="80" y="8" width="320" height="16" rx="8" fill="#222230"/>
             <text x="240" y="20" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">ferreteria-industrial.donweb.com</text>
-
-            <!-- Sidebar -->
             <rect x="0" y="32" width="110" height="188" fill="#0d0d14"/>
             <rect x="10" y="48" width="90" height="10" rx="3" fill="#4f7cff" opacity="0.9"/>
             <rect x="10" y="66" width="70" height="8" rx="3" fill="#333"/>
@@ -697,12 +181,8 @@
             <rect x="10" y="114" width="75" height="8" rx="3" fill="#333"/>
             <rect x="10" y="160" width="90" height="28" rx="6" fill="rgba(79,124,255,0.15)" stroke="#4f7cff" stroke-width="1"/>
             <text x="55" y="178" fill="#4f7cff" font-size="10" text-anchor="middle" font-family="sans-serif">+ Agregar</text>
-
-            <!-- Main content -->
             <text x="130" y="56" fill="#f0f0f5" font-size="13" font-family="sans-serif" font-weight="bold">Catálogo de Productos</text>
             <text x="130" y="70" fill="#666" font-size="9" font-family="sans-serif">128 artículos · Stock actualizado</text>
-
-            <!-- Product cards grid -->
             <rect x="120" y="80" width="110" height="80" rx="8" fill="#1a1a24" stroke="#222" stroke-width="1"/>
             <rect x="125" y="85" width="100" height="45" rx="4" fill="#222230"/>
             <rect x="140" y="95" width="70" height="25" rx="3" fill="#4f7cff" opacity="0.2"/>
@@ -710,7 +190,6 @@
             <text x="130" y="142" fill="#f0f0f5" font-size="9" font-family="sans-serif">$2.450</text>
             <rect x="188" y="135" width="35" height="16" rx="4" fill="#4f7cff"/>
             <text x="206" y="146" fill="#fff" font-size="8" text-anchor="middle" font-family="sans-serif">Stock</text>
-
             <rect x="240" y="80" width="110" height="80" rx="8" fill="#1a1a24" stroke="#222" stroke-width="1"/>
             <rect x="245" y="85" width="100" height="45" rx="4" fill="#222230"/>
             <rect x="260" y="95" width="70" height="25" rx="3" fill="#7c4fff" opacity="0.2"/>
@@ -718,7 +197,6 @@
             <text x="250" y="142" fill="#f0f0f5" font-size="9" font-family="sans-serif">$8.900</text>
             <rect x="308" y="135" width="35" height="16" rx="4" fill="#4caf87"/>
             <text x="326" y="146" fill="#fff" font-size="8" text-anchor="middle" font-family="sans-serif">OK</text>
-
             <rect x="360" y="80" width="110" height="80" rx="8" fill="#1a1a24" stroke="#222" stroke-width="1"/>
             <rect x="365" y="85" width="100" height="45" rx="4" fill="#222230"/>
             <rect x="380" y="95" width="70" height="25" rx="3" fill="#e8c87a" opacity="0.15"/>
@@ -726,8 +204,6 @@
             <text x="370" y="142" fill="#f0f0f5" font-size="9" font-family="sans-serif">$4.200</text>
             <rect x="428" y="135" width="35" height="16" rx="4" fill="#e8c87a" opacity="0.8"/>
             <text x="446" y="146" fill="#111" font-size="8" text-anchor="middle" font-family="sans-serif">Bajo</text>
-
-            <!-- Bottom bar -->
             <rect x="120" y="176" width="380" height="28" rx="6" fill="#1a1a24" stroke="#222" stroke-width="1"/>
             <text x="130" y="193" fill="#666" font-size="9" font-family="sans-serif">Mostrando 1-10 de 128 productos</text>
             <rect x="440" y="181" width="50" height="16" rx="4" fill="#4f7cff" opacity="0.8"/>
@@ -751,7 +227,6 @@
         </div>
       </div>
 
-      <!-- PROJECT 2: SAAS GASTRO -->
       <div class="proj-card fade-up" style="transition-delay:0.1s">
         <div class="proj-mockup">
           <svg width="100%" height="220" viewBox="0 0 520 220" xmlns="http://www.w3.org/2000/svg">
@@ -762,54 +237,41 @@
             <circle cx="50" cy="16" r="5" fill="#28c840"/>
             <rect x="80" y="8" width="320" height="16" rx="8" fill="#222230"/>
             <text x="240" y="20" fill="#666" font-size="10" text-anchor="middle" font-family="monospace">app.gastrosaas.io/dashboard</text>
-
-            <!-- Top stats row -->
             <rect x="10" y="40" width="115" height="50" rx="8" fill="#1a1a24" stroke="#222" stroke-width="1"/>
             <text x="20" y="56" fill="#888" font-size="8" font-family="sans-serif">PEDIDOS HOY</text>
             <text x="20" y="76" fill="#4f7cff" font-size="22" font-family="sans-serif" font-weight="bold">47</text>
-
             <rect x="135" y="40" width="115" height="50" rx="8" fill="#1a1a24" stroke="#222" stroke-width="1"/>
             <text x="145" y="56" fill="#888" font-size="8" font-family="sans-serif">FACTURACIÓN</text>
             <text x="145" y="76" fill="#4caf87" font-size="22" font-family="sans-serif" font-weight="bold">$84k</text>
-
             <rect x="260" y="40" width="115" height="50" rx="8" fill="#1a1a24" stroke="#222" stroke-width="1"/>
             <text x="270" y="56" fill="#888" font-size="8" font-family="sans-serif">MESAS ACTIVAS</text>
             <text x="270" y="76" fill="#e8c87a" font-size="22" font-family="sans-serif" font-weight="bold">12</text>
-
             <rect x="385" y="40" width="125" height="50" rx="8" fill="#1a1a24" stroke="#222" stroke-width="1"/>
             <text x="395" y="56" fill="#888" font-size="8" font-family="sans-serif">CLIENTES</text>
             <text x="395" y="76" fill="#a78bfa" font-size="22" font-family="sans-serif" font-weight="bold">231</text>
-
-            <!-- Orders table -->
             <rect x="10" y="102" width="310" height="108" rx="8" fill="#1a1a24" stroke="#222" stroke-width="1"/>
             <text x="20" y="118" fill="#f0f0f5" font-size="10" font-family="sans-serif" font-weight="bold">Pedidos recientes</text>
             <line x1="10" y1="126" x2="320" y2="126" stroke="#222" stroke-width="1"/>
-            <!-- rows -->
             <text x="20" y="140" fill="#888" font-size="8" font-family="sans-serif">#1042</text>
             <text x="55" y="140" fill="#ddd" font-size="8" font-family="sans-serif">Mesa 4 · 3 items</text>
             <rect x="240" y="132" width="40" height="13" rx="4" fill="rgba(79,124,255,0.2)"/>
             <text x="260" y="141" fill="#4f7cff" font-size="7" text-anchor="middle" font-family="sans-serif">Activo</text>
             <text x="288" y="140" fill="#ddd" font-size="8" font-family="sans-serif">$2.400</text>
-
             <text x="20" y="158" fill="#888" font-size="8" font-family="sans-serif">#1041</text>
             <text x="55" y="158" fill="#ddd" font-size="8" font-family="sans-serif">Mesa 7 · 5 items</text>
             <rect x="240" y="150" width="40" height="13" rx="4" fill="rgba(76,175,135,0.2)"/>
             <text x="260" y="159" fill="#4caf87" font-size="7" text-anchor="middle" font-family="sans-serif">Listo</text>
             <text x="288" y="158" fill="#ddd" font-size="8" font-family="sans-serif">$5.800</text>
-
             <text x="20" y="176" fill="#888" font-size="8" font-family="sans-serif">#1040</text>
             <text x="55" y="176" fill="#ddd" font-size="8" font-family="sans-serif">Mesa 2 · 2 items</text>
             <rect x="240" y="168" width="40" height="13" rx="4" fill="rgba(232,200,122,0.2)"/>
             <text x="260" y="177" fill="#e8c87a" font-size="7" text-anchor="middle" font-family="sans-serif">Cocina</text>
             <text x="288" y="176" fill="#ddd" font-size="8" font-family="sans-serif">$1.950</text>
-
             <text x="20" y="194" fill="#888" font-size="8" font-family="sans-serif">#1039</text>
             <text x="55" y="194" fill="#ddd" font-size="8" font-family="sans-serif">Delivery · 4 items</text>
             <rect x="240" y="186" width="40" height="13" rx="4" fill="rgba(167,139,250,0.2)"/>
             <text x="260" y="195" fill="#a78bfa" font-size="7" text-anchor="middle" font-family="sans-serif">Envío</text>
             <text x="288" y="194" fill="#ddd" font-size="8" font-family="sans-serif">$3.200</text>
-
-            <!-- Role panel -->
             <rect x="330" y="102" width="180" height="108" rx="8" fill="#1a1a24" stroke="#222" stroke-width="1"/>
             <text x="340" y="118" fill="#f0f0f5" font-size="10" font-family="sans-serif" font-weight="bold">Roles de acceso</text>
             <line x1="330" y1="126" x2="510" y2="126" stroke="#222" stroke-width="1"/>
@@ -817,12 +279,10 @@
             <text x="345" y="145" fill="#4f7cff" font-size="8" text-anchor="middle" font-family="sans-serif">A</text>
             <text x="360" y="142" fill="#ddd" font-size="9" font-family="sans-serif">Admin</text>
             <text x="360" y="153" fill="#666" font-size="7" font-family="sans-serif">Acceso total</text>
-
             <circle cx="345" cy="172" r="8" fill="rgba(76,175,135,0.2)"/>
             <text x="345" y="175" fill="#4caf87" font-size="8" text-anchor="middle" font-family="sans-serif">M</text>
             <text x="360" y="172" fill="#ddd" font-size="9" font-family="sans-serif">Mozo</text>
             <text x="360" y="183" fill="#666" font-size="7" font-family="sans-serif">Pedidos y mesas</text>
-
             <circle cx="345" cy="202" r="8" fill="rgba(232,200,122,0.2)"/>
             <text x="345" y="205" fill="#e8c87a" font-size="8" text-anchor="middle" font-family="sans-serif">C</text>
             <text x="360" y="202" fill="#ddd" font-size="9" font-family="sans-serif">Cocina</text>
@@ -933,7 +393,7 @@
       <div class="fade-up" style="transition-delay:0.15s">
         <div class="avail-card">
           <div class="avail-title">
-            <span class="badge-dot dot-green" style="display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;animation:pulse 2s infinite;background:#4caf87;"></span>
+            <span class="pulse-dot-green"></span>
             <span data-es>Disponible ahora</span><span data-en>Available now</span>
           </div>
           <p class="avail-desc">
@@ -941,24 +401,20 @@
             <span data-en>Open to full-time, part-time or freelance positions. Remote (Argentina) or on-site (Spain).</span>
           </p>
           <div class="avail-item">
-            <span class="badge-dot dot-blue" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#4f7cff;flex-shrink:0;"></span>
+            <span class="badge-dot dot-blue"></span>
             <span data-es>Desarrollador Full Stack</span><span data-en>Full Stack Developer</span>
           </div>
           <div class="avail-item">
-            <span class="badge-dot dot-blue" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#4f7cff;flex-shrink:0;"></span>
+            <span class="badge-dot dot-blue"></span>
             <span data-es>Proyectos SaaS y ecommerce</span><span data-en>SaaS and e-commerce projects</span>
           </div>
           <div class="avail-item">
-            <span class="badge-dot dot-blue" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#4f7cff;flex-shrink:0;"></span>
+            <span class="badge-dot dot-blue"></span>
             <span data-es>Automatización con n8n</span><span data-en>Automation with n8n</span>
           </div>
           <div class="avail-item">
-            <span class="badge-dot dot-green" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#4caf87;flex-shrink:0;"></span>
-            🇪🇸 <span data-es>Sin restricciones en España</span><span data-en>No restrictions in Spain</span>
-          </div>
-          <div class="avail-item">
-            <span class="badge-dot dot-green" style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#4caf87;flex-shrink:0;"></span>
-            🇦🇷 <span data-es>Remoto desde Argentina</span><span data-en>Remote from Argentina</span>
+            <span class="badge-dot dot-green"></span>
+            🇦🇷 <span data-es>Argentina / España</span><span data-en>Argentina / Spain</span>
           </div>
         </div>
       </div>
@@ -971,6 +427,7 @@
 </footer>
 
 <script>
+  // Language Toggle
   function setLang(lang) {
     document.body.classList.toggle('lang-en', lang === 'en');
     document.querySelectorAll('.lang-toggle button').forEach((btn, i) => {
@@ -978,14 +435,75 @@
     });
   }
 
-  // Scroll reveal
+  // Scroll Reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Trigger hero immediately
   document.querySelectorAll('#hero .fade-up').forEach(el => el.classList.add('visible'));
+
+  // Custom Cursor (solo en PC)
+  if (window.innerWidth > 768) {
+    const cursor = document.querySelector('.cursor');
+    const follower = document.querySelector('.cursor-follower');
+    if (cursor && follower) {
+      document.addEventListener('mousemove', (e) => {
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        follower.style.transform = `translate(${e.clientX - 15}px, ${e.clientY - 15}px)`;
+      });
+      document.querySelectorAll('a, button, .btn').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+          cursor.style.transform = 'scale(1.5)';
+          follower.style.transform = 'scale(1.5)';
+        });
+        el.addEventListener('mouseleave', () => {
+          cursor.style.transform = 'scale(1)';
+          follower.style.transform = 'scale(1)';
+        });
+      });
+    }
+  }
+
+  // Mobile Menu
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle('active');
+    });
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+    // Cerrar al hacer clic fuera
+    document.addEventListener('click', (e) => {
+      if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+  }
+
+  // Smooth Scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Parallax effect on orbs
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const orbs = document.querySelectorAll('.orb');
+    orbs.forEach((orb, i) => {
+      orb.style.transform = `translateY(${scrolled * 0.05 * (i + 1)}px)`;
+    });
+  });
 </script>
 </body>
 </html>
