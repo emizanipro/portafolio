@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emiliano Prieto — Full Stack Developer · Fundador de ZENNIN</title>
+<meta name="description" content="Emiliano Prieto, desarrollador Full Stack (React, Node.js, MySQL) y fundador de ZENNIN, software SaaS de gestión para restaurantes, bares y boliches. Mendoza, Argentina. Ciudadano español.">
+<meta name="author" content="Emiliano Prieto">
+<meta property="og:title" content="Emiliano Prieto — Full Stack Developer · Fundador de ZENNIN">
+<meta property="og:description" content="React · Node.js · SaaS · Fundador de ZENNIN">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/foto.jpg">
+<meta name="theme-color" content="#0a0a0f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a0a0f'/%3E%3Ctext x='32' y='43' font-size='28' font-weight='800' text-anchor='middle' fill='%234f7cff' font-family='Arial'%3EEP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="orb orb-1"></div><div class="orb orb-2"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="container nav-in">
+    <a class="logo" href="#hero" aria-label="Inicio">EP<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about"><span data-es>Sobre mí</span><span data-en>About</span></a>
+      <a href="#zennin">ZENNIN</a>
+      <a href="#proyectos"><span data-es>Proyectos</span><span data-en>Projects</span></a>
+      <a href="#experiencia"><span data-es>Experiencia</span><span data-en>Experience</span></a>
+      <a href="#skills">Stack</a>
+      <a href="#contacto"><span data-es>Contacto</span><span data-en>Contact</span></a>
+    </div>
+    <div class="nav-right">
+      <div class="lang"><button class="active" data-l="es">ES</button><button data-l="en">EN</button></div>
+      <a class="btn btn-primary nav-cv js-cv" href="CV-Emiliano-Prieto-ES.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>CV
+      </a>
+      <button class="burger" id="burger" aria-label="Menú"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about"><span data-es>Sobre mí</span><span data-en>About</span></a>
+  <a href="#zennin">ZENNIN</a>
+  <a href="#proyectos"><span data-es>Proyectos</span><span data-en>Projects</span></a>
+  <a href="#experiencia"><span data-es>Experiencia</span><span data-en>Experience</span></a>
+  <a href="#skills">Stack</a>
+  <a href="#contacto"><span data-es>Contacto</span><span data-en>Contact</span></a>
+  <a class="btn btn-primary js-cv" href="CV-Emiliano-Prieto-ES.pdf" download><span data-es>Descargar CV</span><span data-en>Download CV</span></a>
+</div>
+
+<main>
+<!-- HERO -->
+<section id="hero">
+  <div class="container hero-grid">
+    <div class="hero-text fade-up">
+      <div class="status"><span class="pulse"></span><span data-es>Disponible para nuevos proyectos</span><span data-en>Available for new projects</span></div>
+      <h1>Emiliano<br><span class="grad">Prieto</span></h1>
+      <p class="role">Full Stack Developer <span style="opacity:.4">·</span> <b data-es>Fundador de ZENNIN</b><b data-en>Founder of ZENNIN</b></p>
+      <p class="hero-sub">
+        <span data-es>Diseño y construyo aplicaciones web y plataformas SaaS, del concepto a producción. Hoy lidero ZENNIN, un software de gestión para gastronomía.</span>
+        <span data-en>I design and build web apps and SaaS platforms, from concept to production. Today I lead ZENNIN, a management software for the food service industry.</span>
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary js-cv" href="CV-Emiliano-Prieto-ES.pdf" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+          <span data-es>Descargar CV</span><span data-en>Download CV</span>
+        </a>
+        <a class="btn btn-ghost" href="#contacto"><span data-es>Contactarme</span><span data-en>Get in touch</span></a>
+      </div>
+      <a class="founder-pill" href="#zennin">
+        <img src="assets/zennin-logo-compact.png" alt="ZENNIN">
+        <span><small data-es>Fundador</small><small data-en>Founder</small><span style="font-size:14px" data-es>Conocé el proyecto →</span><span style="font-size:14px" data-en>See the project →</span></span>
+      </a>
+    </div>
+    <div class="hero-visual fade-up" style="transition-delay:.15s">
+      <div class="photo-wrap">
+        <img src="assets/foto.jpg" alt="Emiliano Prieto" width="614" height="940" fetchpriority="high">
+        <div class="chip c1"><i></i>React · Node.js</div>
+        <div class="chip c2 gold"><i></i>SaaS · MySQL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-text fade-up">
+      <p class="eyebrow"><span data-es>Sobre mí</span><span data-en>About me</span></p>
+      <h2 style="margin-bottom:28px"><span data-es>Construyo productos<br>que funcionan en el mundo real</span><span data-en>I build products<br>that work in the real world</span></h2>
+      <p data-es>Soy <strong>desarrollador Full Stack</strong> y <strong>fundador de ZENNIN</strong>, con base en Mendoza, Argentina. Trabajo de punta a punta: interfaces React responsivas, APIs en Node.js y bases de datos MySQL desplegadas en producción.</p>
+      <p data-en>I'm a <strong>Full Stack Developer</strong> and <strong>founder of ZENNIN</strong>, based in Mendoza, Argentina. I work end to end: responsive React interfaces, Node.js APIs and MySQL databases running in production.</p>
+      <p data-es>Aprendí construyendo proyectos reales y hoy combino el desarrollo con la visión de producto: me apasiona el modelo <strong>SaaS</strong> y la automatización de procesos para ayudar a los negocios a crecer.</p>
+      <p data-en>I learned by building real projects, and today I combine development with product vision: I'm passionate about the <strong>SaaS</strong> model and process automation to help businesses grow.</p>
+      <div class="flag-badge">🇪🇸 <span data-es>Ciudadanía española · disponible para trabajar en España</span><span data-en>Spanish citizenship · available to work in Spain</span></div>
+    </div>
+    <div class="stats fade-up" style="transition-delay:.15s">
+      <div class="stat"><b class="grad">1</b><span data-es>Startup SaaS propia: ZENNIN</span><span data-en>Own SaaS startup: ZENNIN</span></div>
+      <div class="stat"><b class="grad">2+</b><span data-es>Proyectos en producción</span><span data-en>Projects in production</span></div>
+      <div class="stat"><b class="grad">Full</b><span>Stack · front + back + DB</span></div>
+      <div class="stat"><b class="grad">100%</b><span data-es>Autodidacta · proyectos reales</span><span data-en>Self-taught · real projects</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ZENNIN -->
+<section id="zennin">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <p class="eyebrow"><span data-es>Mi startup</span><span data-en>My startup</span></p>
+      <h2><span data-es>Fundador de ZENNIN</span><span data-en>Founder of ZENNIN</span></h2>
+    </div>
+
+    <div class="vid-frame fade-up">
+      <div class="vid-scroll">
+        <video class="loopvid" poster="assets/zennin-banner-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="ZENNIN: gestión gastronómica para restaurantes, bares y boliches"><source src="assets/zennin-banner.mp4" type="video/mp4"><source src="assets/zennin-banner.webm" type="video/webm"></video>
+      </div>
+      <p class="vid-hint"><span data-es>Tocá el video para verlo en pantalla completa ⤢</span><span data-en>Tap the video to view it full screen ⤢</span></p>
+    </div>
+
+    <div class="zen-card fade-up">
+      <div class="zen-info">
+        <img class="zen-logo" src="assets/zennin-logo.png" alt="ZENNIN — El sabio que tu negocio necesita">
+        <div><span class="zen-role"><span data-es>Fundador · Producto & Desarrollo</span><span data-en>Founder · Product & Development</span></span></div>
+        <h3><span data-es>Todo tu local en un solo lugar</span><span data-en>Your whole venue in one place</span></h3>
+        <p>
+          <span data-es>ZENNIN es un software SaaS multi-local para restaurantes, bares y boliches. Une caja, stock, cocina, menú QR y fidelización, y atiende clientes por WhatsApp con inteligencia artificial.</span>
+          <span data-en>ZENNIN is a multi-venue SaaS for restaurants, bars and nightclubs. It brings together cashier, stock, kitchen, QR menu and loyalty, and serves customers on WhatsApp with artificial intelligence.</span>
+        </p>
+        <div class="zen-state"><span class="pulse"></span><span data-es>En desarrollo activo</span><span data-en>In active development</span></div>
+        <div class="tags"><span class="tag z">Caja</span><span class="tag z">Stock</span><span class="tag z">Menú QR</span><span class="tag z">Cocina</span><span class="tag z"><span data-es>Fidelización</span><span data-en>Loyalty</span></span><span class="tag z"><span data-es>Gerente IA</span><span data-en>AI Manager</span></span></div>
+        <div class="tags" style="margin-top:10px"><span class="tag a">React</span><span class="tag a">Node.js</span><span class="tag">MySQL</span><span class="tag">n8n</span><span class="tag">WhatsApp</span><span class="tag">IA</span></div>
+      </div>
+      <div class="zen-feats">
+        <div class="zf"><i>💬</i><b><span data-es>WhatsApp inteligente</span><span data-en>Smart WhatsApp</span></b><span data-es>Responde 24 h, toma el pedido y cobra con Mercado Pago.</span><span data-en>Replies 24/7, takes the order and charges with Mercado Pago.</span></div>
+        <div class="zf"><i>🧑‍🍳</i><b><span data-es>Cocina</span><span data-en>Kitchen</span></b><span data-es>Pedidos en pantalla, alergias resaltadas y aviso al mozo.</span><span data-en>Orders on screen, highlighted allergies and waiter alerts.</span></div>
+        <div class="zf"><i>📱</i><b><span data-es>Menú QR</span><span data-en>QR menu</span></b><span data-es>El cliente pide y paga solo, sin filas ni intermediarios.</span><span data-en>Customers order and pay on their own, no queues.</span></div>
+        <div class="zf"><i>🎁</i><b><span data-es>Fidelización</span><span data-en>Loyalty</span></b><span data-es>Puntos con cada compra, canjeables por descuentos.</span><span data-en>Points on every purchase, redeemable for discounts.</span></div>
+        <div class="zf"><i>📦</i><b>Stock</b><span data-es>Se descuenta solo con cada venta y avisa cuando algo se termina.</span><span data-en>Updates itself on every sale and alerts you when something runs out.</span></div>
+        <div class="zf"><i>🧾</i><b><span data-es>Compras y costos</span><span data-en>Purchasing & costs</span></b><span data-es>Cargá la compra y se suma al stock; control de proveedores.</span><span data-en>Log a purchase and it adds to stock; supplier tracking.</span></div>
+      </div>
+    </div>
+
+    <div class="demo-head fade-up">
+      <h3><span data-es>Así funciona</span><span data-en>How it works</span></h3>
+    </div>
+    <div class="vid-frame fade-up">
+      <div class="vid-scroll">
+        <video class="loopvid" poster="assets/zennin-demos-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Demos de ZENNIN: WhatsApp, cocina, pantalla digital y fidelización"><source src="assets/zennin-demos.mp4" type="video/mp4"><source src="assets/zennin-demos.webm" type="video/webm"></video>
+      </div>
+      <p class="vid-hint"><span data-es>Tocá el video para verlo en pantalla completa ⤢</span><span data-en>Tap the video to view it full screen ⤢</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <p class="eyebrow"><span data-es>Proyectos</span><span data-en>Projects</span></p>
+      <h2><span data-es>Cosas que construí</span><span data-en>Things I built</span></h2>
+    </div>
+    <div class="proj-grid">
+      <article class="proj fade-up">
+        <div class="mock" aria-hidden="true">
+          <div class="mock-bar"><i></i><i></i><i></i><span>ferreteria-industrial</span></div>
+          <div class="mock-body">
+            <div class="prods">
+              <div class="prod"><div class="img"></div><b>Tornillo M8</b><span class="st g">Stock</span></div>
+              <div class="prod"><div class="img"></div><b>Llave 13mm</b><span class="st b">OK</span></div>
+              <div class="prod"><div class="img"></div><b>Broca 6mm</b><span class="st y">Bajo</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="proj-body">
+          <h3><span data-es>Ecommerce Ferretería Industrial</span><span data-en>Industrial Hardware E-commerce</span></h3>
+          <p><span data-es>Tienda online con catálogo, gestión de stock y panel de administración. En producción, con autenticación de usuarios y procesos automatizados.</span><span data-en>Online store with catalog, inventory management and admin panel. Live in production, with user authentication and automated processes.</span></p>
+          <div class="tags"><span class="tag a">React</span><span class="tag a">Node.js</span><span class="tag">MySQL</span><span class="tag">Nginx</span><span class="tag">n8n</span><span class="tag">DonWeb</span></div>
+        </div>
+      </article>
+      <article class="proj fade-up" style="transition-delay:.1s">
+        <div class="mock" aria-hidden="true" style="display:grid;place-items:center;min-height:178px;background:radial-gradient(circle at 50% 40%,rgba(124,79,255,.18),transparent 70%),var(--bg2)">
+          <img src="assets/zennin-logo-compact.png" alt="" style="height:44px;width:auto">
+        </div>
+        <div class="proj-body">
+          <h3>ZENNIN <span class="tag" style="vertical-align:middle;margin-left:6px"><span data-es>Fundador</span><span data-en>Founder</span></span></h3>
+          <p><span data-es>SaaS multi-local para restaurantes, bares y boliches: caja, stock, cocina, menú QR, fidelización y WhatsApp con IA. Mi proyecto principal, hoy en desarrollo.</span><span data-en>Multi-venue SaaS for restaurants, bars and nightclubs: cashier, stock, kitchen, QR menu, loyalty and WhatsApp with AI. My main project, currently in development.</span></p>
+          <div class="tags"><span class="tag a">React</span><span class="tag a">Node.js</span><span class="tag">MySQL</span><span class="tag">API REST</span><span class="tag">SaaS</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section id="experiencia">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <p class="eyebrow"><span data-es>Trayectoria</span><span data-en>Career</span></p>
+      <h2><span data-es>Experiencia y formación</span><span data-en>Experience & education</span></h2>
+    </div>
+    <div class="exp-grid">
+      <div class="timeline fade-up">
+        <div class="tl now">
+          <time><span data-es>Actualidad</span><span data-en>Present</span></time>
+          <h3><span data-es>Fundador</span><span data-en>Founder</span></h3>
+          <div class="org">ZENNIN · SaaS gastronómico</div>
+          <p><span data-es>Liderazgo de producto y desarrollo full stack de un SaaS multi-local: caja, stock, cocina, menú QR, fidelización y atención por WhatsApp con IA (n8n + MySQL).</span><span data-en>Product leadership and full stack development of a multi-venue SaaS: cashier, stock, kitchen, QR menu, loyalty and WhatsApp customer service with AI (n8n + MySQL).</span></p>
+        </div>
+        <div class="tl now">
+          <time>2025 — <span data-es>Actualidad</span><span data-en>Present</span></time>
+          <h3>Full Stack Developer</h3>
+          <div class="org">Grupo IDF</div>
+          <p><span data-es>Plataforma ecommerce con gestión de productos y stock. Arquitectura React, Node.js y MySQL, APIs REST, autenticación y control de acceso. Despliegue productivo y automatización con n8n.</span><span data-en>Ecommerce platform with product and stock management. React, Node.js and MySQL architecture, REST APIs, authentication and access control. Production deployment and n8n automation.</span></p>
+        </div>
+        <div class="tl">
+          <time>2024 — 2025</time>
+          <h3><span data-es>Desarrollador Web</span><span data-en>Web Developer</span></h3>
+          <div class="org"><span data-es>Proyectos propios</span><span data-en>Own projects</span></div>
+          <p><span data-es>Aplicaciones full stack (frontend, backend y base de datos), diseño de interfaces orientadas a usabilidad e integración de MySQL.</span><span data-en>Full stack applications (frontend, backend and database), usability-focused interface design and MySQL integration.</span></p>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:.15s">
+        <h3 class="sub-title"><span data-es>Formación</span><span data-en>Education</span></h3>
+        <div class="edu">
+          <div><b>Programación React.js</b><span>Openbootcamp · 2023</span></div>
+          <div><b>Node.js y Backend</b><span>Openbootcamp · 2023</span></div>
+          <div><b><span data-es>Bases de datos SQL (MySQL)</span><span data-en>SQL Databases (MySQL)</span></b><span><span data-es>Autodidacta</span><span data-en>Self-taught</span> · 2024</span></div>
+          <div><b><span data-es>Despliegue y servidores (Nginx)</span><span data-en>Deployment & servers (Nginx)</span></b><span><span data-es>Autodidacta</span><span data-en>Self-taught</span> · 2024</span></div>
+          <div><b><span data-es>Automatización de procesos (n8n)</span><span data-en>Process automation (n8n)</span></b><span><span data-es>Autodidacta</span><span data-en>Self-taught</span> · 2025</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="sec-head fade-up">
+      <p class="eyebrow">Stack</p>
+      <h2><span data-es>Tecnologías</span><span data-en>Technologies</span></h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill fade-up"><h3>Frontend</h3><ul><li>React</li><li>JavaScript</li><li>HTML5 / CSS3</li><li><span data-es>Diseño responsivo</span><span data-en>Responsive design</span></li></ul></div>
+      <div class="skill fade-up" style="transition-delay:.08s"><h3>Backend</h3><ul><li>Node.js</li><li>APIs REST</li><li><span data-es>Autenticación y roles</span><span data-en>Auth & roles</span></li><li>Postman</li></ul></div>
+      <div class="skill fade-up" style="transition-delay:.16s"><h3><span data-es>Base de datos</span><span data-en>Database</span></h3><ul><li>MySQL</li><li><span data-es>Diseño relacional</span><span data-en>Relational design</span></li><li>Git / GitHub</li></ul></div>
+      <div class="skill fade-up" style="transition-delay:.24s"><h3>DevOps</h3><ul><li>Nginx</li><li>n8n</li><li>DonWeb · Hostinger</li><li>Canva</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="container contact-grid">
+    <div class="fade-up">
+      <p class="eyebrow"><span data-es>Contacto</span><span data-en>Contact</span></p>
+      <h2><span data-es>Hablemos</span><span data-en>Let's talk</span></h2>
+      <p style="color:var(--muted);margin-top:16px;max-width:480px"><span data-es>¿Tenés un proyecto, una vacante o querés conocer ZENNIN? Escribime: respondo rápido.</span><span data-en>Have a project, a role or want to know ZENNIN? Write me, I reply fast.</span></p>
+      <div class="contact-links">
+        <a class="c-link" href="mailto:prieto.emiliano.zani@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg><div><small>Email</small><span>prieto.emiliano.zani@gmail.com</span></div></a>
+        <a class="c-link" href="https://www.linkedin.com/in/emizanipro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v2"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><div><small>LinkedIn</small><span>linkedin.com/in/emizanipro</span></div></a>
+        <a class="c-link" href="https://github.com/emizanipro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.1-1.47-1.1-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.26-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.7.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.38.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z"/></svg><div><small>GitHub</small><span>github.com/emizanipro</span></div></a>
+        <a class="c-link" href="tel:+542615612714"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.09h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><div><small><span data-es>Teléfono</span><span data-en>Phone</span></small><span>+54 261 561-2714</span></div></a>
+      </div>
+    </div>
+    <div class="fade-up" style="transition-delay:.15s">
+      <div class="cv-card">
+        <h3><span data-es>Mi CV</span><span data-en>My résumé</span></h3>
+        <p><span data-es>Descargalo en PDF: una página con experiencia, formación y stack.</span><span data-en>Download the PDF: one page with experience, education and stack.</span></p>
+        <div class="list">
+          <div><span data-es>Full Stack · React, Node.js, MySQL</span><span data-en>Full Stack · React, Node.js, MySQL</span></div>
+          <div><span data-es>Fundador de ZENNIN</span><span data-en>Founder of ZENNIN</span></div>
+          <div><span data-es>Argentina / España</span><span data-en>Argentina / Spain</span></div>
+        </div>
+        <div class="cv-btns">
+          <a class="btn btn-primary" href="CV-Emiliano-Prieto-ES.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>CV · Español</a>
+          <a class="btn btn-ghost" href="CV-Emiliano-Prieto-EN.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>CV · English</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <p>© 2026 Emiliano Prieto · Full Stack Developer</p>
+    <p><span data-es>Fundador de</span><span data-en>Founder of</span> <a href="#zennin">ZENNIN</a> · <a href="https://github.com/emizanipro" target="_blank" rel="noopener">github.com/emizanipro</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var body=document.body;
+  function setLang(l){
+    body.classList.toggle('lang-en',l==='en');
+    document.documentElement.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(b){b.classList.toggle('active',b.dataset.l===l)});
+    document.querySelectorAll('.js-cv').forEach(function(a){a.href='CV-Emiliano-Prieto-'+(l==='en'?'EN':'ES')+'.pdf'});
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+  var saved='es';try{saved=localStorage.getItem('lang')||'es'}catch(e){}
+  setLang(saved);
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.fade-up').forEach(function(el){io.observe(el)});
+
+  var vio=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.25});
+  document.querySelectorAll('.loopvid').forEach(function(v){
+    v.muted=true;vio.observe(v);
+    v.addEventListener('click',function(){
+      if(window.innerWidth>=900)return;
+      var f=v.requestFullscreen||v.webkitRequestFullscreen||v.webkitEnterFullscreen;
+      if(f)try{f.call(v)}catch(e){}
+    });
+  });
+
+  var burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu');
+  function closeMenu(){menu.classList.remove('active');burger.classList.remove('open')}
+  burger.addEventListener('click',function(e){e.stopPropagation();menu.classList.toggle('active');burger.classList.toggle('open')});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
+  document.addEventListener('click',function(e){if(!menu.contains(e.target))closeMenu()});
+
+  var links=document.querySelectorAll('.nav-links a'),secs=[].map.call(links,function(a){return document.querySelector(a.getAttribute('href'))});
+  window.addEventListener('scroll',function(){
+    var y=window.scrollY+140,cur=-1;
+    secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i});
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur)});
+  },{passive:true});
+})();
+</script>
+</body>
+</html>
